@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+
+class Node {
+  public:
+    int data;
+    Node *next;
+
+    Node(int new_data) {
+        data = new_data;
+        next = NULL;
+    }
+};
+int lengthLL(Node* &head)
+{
+    int len=0;
+    Node*temp=head;
+    while(temp!=NULL)
+    {
+        len++;
+        temp=temp->next;
+    }
+    return len;
+}
+
+
+void printList(Node *head) {
+    Node*temp=head;
+    while (temp !=NULL) {
+        cout << " " << temp->data;
+        temp = temp->next;
+    }
+}
+
+int main() 
+{
+
+    //hard code to create a linked list
+    Node *head = new Node(10);
+    head->next = new Node(20);
+    head->next->next = new Node(30);
+    head->next->next->next = new Node(40);
+    head->next->next->next->next = new Node(50);
+
+    cout << "Linked list : "<<endl;
+    printList(head);
+    cout<<endl;
+
+    cout<<"Length of linked list : "<<lengthLL(head)<<endl;
+
+    return 0;
+}
