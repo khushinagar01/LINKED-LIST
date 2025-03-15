@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+class Node
+{
+    public:
+      int data;
+      Node*next;
+
+      Node(int new_data)
+      {
+        data=new_data;
+        next=NULL;
+      }
+
+};
+int middleNode(Node* &head)
+{
+    Node* slow=head;
+    Node* fast=head;
+    while(fast!=NULL)
+    {
+        fast=fast->next;
+        if(fast!=NULL)
+        {
+            fast=fast->next;
+            slow=slow->next;
+        }
+    }
+    return slow->data;
+}
+
+void printList(Node *head)
+{
+    Node*temp=head;
+    while (temp !=NULL) 
+    {
+        cout << " " << temp->data;
+        temp = temp->next;
+    }
+}
+int main()
+{
+    
+    //hard code to create a linked list
+    Node *head = new Node(10);
+    head->next = new Node(20);
+    head->next->next = new Node(30);
+    head->next->next->next = new Node(40);
+    head->next->next->next->next = new Node(50);
+    cout << "Linked list : "<<endl;
+    printList(head);
+    cout<<endl;
+
+    cout<<"Middle Node of linked list : "<<middleNode(head)<<endl;
+
+    return 0;
+   
+}
