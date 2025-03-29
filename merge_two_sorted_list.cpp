@@ -8,7 +8,7 @@ struct ListNode
     ListNode(int x) : val(x), next(NULL) {}
 };
 
-//function to create a linked list from a vector
+//create a linked list from a vector
 ListNode* createLinkedList(vector<int> values) 
 {
     if (values.empty()) return NULL;
@@ -21,7 +21,7 @@ ListNode* createLinkedList(vector<int> values)
     return head;
 }
 
-// ]function to print a linked list
+// print a linked list
 void printLinkedList(ListNode* head) 
 {
     while (head) 
