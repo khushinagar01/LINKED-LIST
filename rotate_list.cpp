@@ -19,7 +19,6 @@ void printList(ListNode* head)
     }
     cout << "NULL" << endl;
 }
-
 // Function to append a new node at the end
 void append(ListNode*& head, int val)
 {
